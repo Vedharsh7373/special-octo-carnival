@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a1020" />
+  <meta name="description" content="Python Quest — learn real Python by completing coding missions, quizzes and projects." />
+  <title>Python Quest — Learn Python by Playing</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    :root{color-scheme:dark;--bg:#080d19;--panel:#11192b;--panel2:#172136;--panel3:#1d2a43;--border:#293651;--muted:#91a2bf;--text:#f3f7ff;--cyan:#65e6df;--blue:#75a9ff;--purple:#b99bff;--gold:#ffd47b;--green:#68e8ab;--red:#ff8d9a;--shadow:0 24px 75px #0005}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse 850px 500px at 67% -150px,#243a704d,transparent),var(--bg);font-family:'DM Sans',system-ui,sans-serif;color:var(--text);line-height:1.55}button,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}button:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}a{color:var(--cyan)}.hidden{display:none!important}.app{display:grid;grid-template-columns:263px minmax(0,1fr);min-height:100vh}.sidebar{border-right:1px solid var(--border);background:#0c1324ec;padding:29px 17px 25px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:24px;z-index:3}.logo{display:flex;align-items:center;gap:11px;font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;letter-spacing:-.8px;padding:0 10px}.logo-icon{display:grid;place-items:center;width:41px;height:41px;border-radius:13px;background:linear-gradient(135deg,#64e9df,#7b9dff);color:#071426;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;box-shadow:0 6px 22px #53e3d82b}.logo span span{color:var(--cyan)}.sidebar-label{color:#6f819f;text-transform:uppercase;letter-spacing:2px;font-size:10px;font-weight:800;padding:0 13px;margin-bottom:8px}.sidebar-items{display:grid;gap:6px}.side-link{border:1px solid transparent;background:transparent;color:#acbbd3;display:flex;align-items:center;gap:12px;width:100%;padding:12px 13px;text-align:left;border-radius:13px;font-weight:700;font-size:13px;transition:.2s}.side-link:hover{background:#1b2843}.side-link.active{background:linear-gradient(90deg,#2a4261,#1a2b43);color:#f1ffff;border-color:#3a5779}.side-link .side-ico{display:grid;place-items:center;width:27px;height:27px;border-radius:9px;background:#25334c;font-size:15px}.side-link .side-detail{margin-left:auto;font-size:11px;color:#8ea2c1;font-weight:600}.side-link.locked{opacity:.46}.sidebar-foot{margin-top:auto;border:1px solid #34425d;background:linear-gradient(145deg,#202d47,#111c30);border-radius:16px;padding:16px}.sidebar-foot .foot-head{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px}.sidebar-foot p{font-size:12px;color:var(--muted);margin:7px 0 11px}.tiny-progress{height:7px;background:#2c3850;border-radius:99px;overflow:hidden}.tiny-progress>span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--blue));transition:width .3s}.foot-small{display:flex;justify-content:space-between;color:#aabbd2;font-size:11px;margin-top:8px}.main-area{min-width:0}.topbar{height:84px;padding:0 clamp(20px,4vw,58px);border-bottom:1px solid #25314b82;display:flex;align-items:center;justify-content:space-between;gap:20px}.breadcrumbs{color:#94a6c3;font-size:13px}.breadcrumbs strong{color:#e8efff}.top-stats{display:flex;align-items:center;gap:9px}.stat-pill{border:1px solid var(--border);border-radius:100px;padding:8px 13px;display:flex;align-items:center;gap:8px;font-size:12px;color:#dde7f8;font-weight:800;background:#141e30}.stat-pill b{color:var(--gold)}.stat-pill .spark{font-size:15px}.engine-dot{height:8px;width:8px;border-radius:50%;background:var(--gold);display:inline-block;box-shadow:0 0 12px #ffd47b75}.engine-dot.ready{background:var(--green);box-shadow:0 0 12px #68e8ab75}.engine-dot.error{background:var(--red)}.view{max-width:1490px;margin:0 auto;padding:37px clamp(20px,4vw,58px) 70px}.hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.14fr .86fr;gap:22px;border:1px solid #344a68;background:radial-gradient(circle at 82% 3%,#29427a 0,transparent 52%),linear-gradient(130deg,#192641,#0e192c 70%);border-radius:23px;padding:43px 44px;min-height:316px;box-shadow:var(--shadow)}.hero:before{content:'';position:absolute;inset:0;opacity:.25;background-image:radial-gradient(#a9c9ed 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(90deg,transparent 20%,black)}.hero>*{position:relative;z-index:1}.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:700;color:var(--cyan);margin-bottom:12px}.hero h1{font:700 clamp(32px,4.4vw,54px)/1.08 'Space Grotesk',sans-serif;letter-spacing:-2.4px;max-width:650px;margin:0 0 15px}.gradient-text{background:linear-gradient(90deg,#83f5e9,#88b5ff,#c8aaff);background-clip:text;-webkit-background-clip:text;color:transparent}.hero p{color:#b6c6df;max-width:500px;font-size:14px;line-height:1.85;margin:0 0 24px}.primary,.secondary,.subtle-btn{border:0;border-radius:12px;padding:13px 18px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:transform .15s,filter .15s,background .15s;font-size:13px}.primary{background:linear-gradient(105deg,#67e6dc,#83b5fc);color:#071b2a;box-shadow:0 8px 30px #62dedb28}.primary:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.07)}.secondary{background:#202f49;color:#e7f1ff;border:1px solid #425371}.secondary:hover:not(:disabled){background:#2b3b57}.subtle-btn{background:transparent;color:#a9c1e0;border:1px solid #2d3b55}.subtle-btn:hover:not(:disabled){background:#25334a}.hero-terminal{width:100%;max-width:390px;align-self:center;justify-self:end;background:#09101ee8;border:1px solid #40547b;border-radius:15px;overflow:hidden;box-shadow:0 20px 45px #0005;transform:rotate(2deg)}.window-top{background:#1c2942;padding:12px 15px;display:flex;align-items:center;gap:7px;border-bottom:1px solid #32415b}.traffic{height:9px;width:9px;border-radius:50%;background:#ff7785}.traffic:nth-child(2){background:#ffd47b}.traffic:nth-child(3){background:#76e1b3}.window-title{margin-left:10px;color:#8ca0be;font:11px 'JetBrains Mono',monospace}.hero-terminal pre{padding:20px 21px 25px;margin:0;color:#dee9f8;font:12px/2.15 'JetBrains Mono',monospace;overflow:auto}.code-blue{color:#8fbaff}.code-green{color:#7de9b7}.code-purple{color:#c3a6fc}.code-gray{color:#8294ae}.quick-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:22px}.quick-box{background:#131d30;border:1px solid var(--border);padding:18px 20px;border-radius:15px;display:flex;align-items:center;gap:14px}.quick-icon{border:1px solid #344764;background:#20334b;border-radius:12px;height:43px;width:43px;display:grid;place-items:center;font-size:19px}.quick-box b{font:700 23px 'Space Grotesk',sans-serif;display:block}.quick-box span{color:var(--muted);font-size:12px}.section-row{display:flex;justify-content:space-between;align-items:flex-end;gap:15px;margin:36px 0 15px}.section-row h2{margin:0;font:700 23px 'Space Grotesk',sans-serif;letter-spacing:-.55px}.section-row p{margin:5px 0 0;font-size:13px;color:var(--muted)}.section-mini{color:var(--cyan);font-size:12px;font-weight:800}.levels-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.level-card{background:linear-gradient(180deg,#182339,#101a2c);border:1px solid #31405a;padding:20px;border-radius:17px;text-align:left;color:var(--text);min-height:238px;transition:.2s;display:flex;flex-direction:column;align-items:stretch}.level-card:hover:not(:disabled){transform:translateY(-4px);border-color:#66bebd}.level-card.locked{opacity:.55;filter:saturate(.65)}.level-card .level-icon{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font:700 19px 'JetBrains Mono',monospace;margin-bottom:20px}.tone-cyan{background:#123a42;color:#79efe2}.tone-blue{background:#23385a;color:#a6c7ff}.tone-purple{background:#392b57;color:#d3b7ff}.tone-gold{background:#443724;color:#f8d78d}.level-card .level-no{color:#8d9fb9;font:10px 'JetBrains Mono',monospace;letter-spacing:1px;text-transform:uppercase}.level-card h3{font:700 18px 'Space Grotesk',sans-serif;margin:5px 0 6px}.level-card p{font-size:12px;color:#a5b4cc;margin:0 0 18px;line-height:1.65;min-height:38px}.card-progress{margin-top:auto;display:flex;justify-content:space-between;font:11px 'JetBrains Mono',monospace;color:#acc0dd;margin-bottom:7px}.card-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:14px;color:#95b7cc;font-size:11px;font-weight:800}.course-note{margin-top:22px;padding:17px 18px;border:1px dashed #395477;border-radius:13px;background:#121c2e;color:#acc1df;line-height:1.7;font-size:12px}.course-note strong{color:#e0f4ff}.back-button{display:inline-flex;gap:7px;align-items:center;color:#a2bad8;background:transparent;border:0;font-weight:800;padding:3px 0;margin:0 0 22px;font-size:13px}.back-button:hover{color:var(--cyan)}.mission-heading{display:flex;gap:16px;justify-content:space-between;align-items:flex-start;margin-bottom:22px}.mission-heading h1{font:700 clamp(26px,3vw,38px)/1.2 'Space Grotesk',sans-serif;margin:5px 0 8px;letter-spacing:-1.2px}.mission-heading p{color:var(--muted);margin:0;font-size:13px}.mission-tag{color:var(--cyan);font:700 11px 'JetBrains Mono',monospace;letter-spacing:1px;text-transform:uppercase}.mission-right-badges{display:flex;gap:7px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.reward-badge,.status-badge{background:#29354e;border:1px solid #3d4e6f;color:#ffdb93;font-size:11px;font-weight:800;padding:7px 11px;border-radius:10px}.status-badge{color:#9dc6f0}.mission-layout{display:grid;grid-template-columns:minmax(260px,.79fr) minmax(400px,1.21fr);gap:20px;align-items:start}.mission-left{display:grid;gap:16px}.info-card,.editor-card,.console-card,.quiz-card{border:1px solid #31415d;border-radius:17px;background:#131e32;overflow:hidden}.info-card{padding:22px}.card-kicker{font:800 10px 'JetBrains Mono',monospace;color:#72e9e1;letter-spacing:1.7px;text-transform:uppercase;margin-bottom:10px}.info-card h2{font:700 20px 'Space Grotesk',sans-serif;margin:0 0 10px}.info-card p{font-size:13px;color:#b8c7dc;margin:0;line-height:1.83;white-space:pre-line}.objective{margin-top:18px;border-left:3px solid var(--cyan);background:#20354a;padding:12px 14px;color:#e5f7ff;border-radius:0 9px 9px 0;font-size:12px;line-height:1.75}.objective b{display:block;color:#78ebdd;letter-spacing:.5px;font-size:10px;text-transform:uppercase;margin-bottom:3px}.snippet{font:12px/1.75 'JetBrains Mono',monospace;background:#0b1526;color:#bce5f4;padding:15px;border-radius:10px;overflow:auto;white-space:pre-wrap;tab-size:4;border:1px solid #293a54;margin-top:15px}.help-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.help-actions button{background:#22344d;border:1px solid #3b5272;color:#d9eafd;border-radius:10px;padding:9px 12px;font-size:12px;font-weight:800}.help-actions button:hover{background:#2d4463}.help-box{margin-top:14px;background:#262d45;border:1px solid #5c5575;border-radius:10px;padding:13px 14px;font-size:12px;color:#e1dfff;line-height:1.75}.workspace{display:grid;gap:14px;min-width:0}.editor-top{display:flex;align-items:center;justify-content:space-between;background:#1a2840;padding:12px 16px;border-bottom:1px solid #32435f;gap:10px}.editor-label{display:flex;align-items:center;gap:9px;font:700 12px 'JetBrains Mono',monospace;color:#cee3f9}.py-icon{height:23px;width:23px;border-radius:7px;background:linear-gradient(145deg,#377cc4 48%,#f4ca55 52%);display:grid;place-items:center;color:white;font-weight:900;font-size:11px}.editor-tools{display:flex;align-items:center;gap:9px}.mini-button{background:#263752;border:1px solid #3e536f;border-radius:8px;color:#b7cce3;padding:6px 9px;font-size:11px;font-weight:800}.mini-button:hover{background:#304561}.editor-body{display:flex;background:#090f1d;min-height:320px;position:relative}.line-numbers{font:13px/24px 'JetBrains Mono',monospace;min-width:42px;text-align:right;color:#526581;padding:17px 10px 20px 0;white-space:pre;user-select:none;overflow:hidden;border-right:1px solid #202e45}.code-input{width:100%;min-height:320px;resize:vertical;background:transparent;color:#dbecfb;border:0;outline:0;padding:17px 15px 20px;font:13px/24px 'JetBrains Mono',monospace;white-space:pre;tab-size:4;overflow:auto;caret-color:#77e9e1}.code-input:focus-visible{outline:0}.editor-footer{padding:14px 16px;border-top:1px solid #2d3d58;display:flex;justify-content:space-between;align-items:center;gap:13px;flex-wrap:wrap}.editor-footer .hint-text{font-size:11px;color:#889db9}.editor-buttons{display:flex;gap:9px;flex-wrap:wrap}.editor-buttons .primary,.editor-buttons .secondary{padding:10px 14px;font-size:12px}.console-card{background:#0b1322}.console-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #263750;color:#b3c8e4;font:700 11px 'JetBrains Mono',monospace;letter-spacing:.35px}.console-head span:last-child{color:#8197b5;font:11px 'DM Sans',sans-serif}.console-content{padding:16px;min-height:104px;max-height:245px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.8 'JetBrains Mono',monospace;color:#b4d0e5}.console-content.error{color:#ff9ba9}.console-content.success{color:#82e9b0}.feedback{display:flex;align-items:flex-start;gap:9px;border-radius:10px;padding:12px 14px;font-size:12px;font-weight:700;line-height:1.6;margin-top:1px}.feedback.ok{background:#173b34;border:1px solid #2d8067;color:#8df9bd}.feedback.no{background:#3a2739;border:1px solid #7c4d67;color:#ffd5db}.feedback.info{background:#20334f;border:1px solid #3c5e85;color:#bcd8ff}.quiz-card{padding:24px}.quiz-card h2{font:700 21px 'Space Grotesk',sans-serif;margin:0 0 15px}.option{width:100%;display:flex;align-items:center;gap:12px;padding:14px;margin-bottom:10px;text-align:left;color:#dde8fa;background:#1a2941;border:1px solid #3a4c68;border-radius:12px;transition:.15s;font-size:13px}.option:hover:not(:disabled){border-color:#71c6cf;background:#263a56}.option.selected{border-color:var(--cyan);background:#264254}.option.correct{border-color:var(--green);background:#18483a}.option.wrong{border-color:var(--red);background:#522c3d}.option-letter{display:grid;place-items:center;width:27px;height:27px;border-radius:8px;background:#324460;color:#b9d7fa;font:800 11px 'JetBrains Mono',monospace;flex-shrink:0}.quiz-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:19px;flex-wrap:wrap}.quiz-note{color:#8196b5;font-size:11px}.quest-track{display:flex;gap:6px;align-items:center;margin-top:20px}.track-step{height:6px;border-radius:6px;background:#293b59;flex:1}.track-step.done{background:var(--green)}.track-step.active{background:var(--cyan)}.next-inline{margin-top:13px;width:100%}.modal-shade{position:fixed;inset:0;background:#020714c9;display:grid;place-items:center;z-index:20;padding:18px;backdrop-filter:blur(8px)}.modal{width:min(100%,440px);border-radius:23px;border:1px solid #547b9c;background:radial-gradient(circle at top,#2c4b69,#141e34 65%);padding:32px;text-align:center;box-shadow:var(--shadow);animation:rise .28s ease}.modal-icon{font-size:56px;line-height:1.2;filter:drop-shadow(0 12px 16px #0005)}.modal h2{font:700 30px 'Space Grotesk',sans-serif;margin:13px 0 9px}.modal p{color:#b5c7dc;font-size:13px;line-height:1.75;margin:0 0 17px}.big-xp{display:inline-block;border:1px solid #73684b;background:#443a27;color:#ffd98c;padding:9px 18px;border-radius:12px;font:800 18px 'Space Grotesk',sans-serif;margin-bottom:20px}.modal-buttons{display:flex;justify-content:center;gap:10px}.toast{position:fixed;bottom:23px;right:23px;z-index:30;max-width:min(360px,calc(100vw - 40px));border:1px solid #466588;border-radius:12px;background:#20324b;box-shadow:var(--shadow);padding:13px 17px;color:#edfcff;font-size:12px;font-weight:700;animation:rise .2s ease}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.smallprint{color:#8295b0;font-size:11px;margin-top:14px}.progress-banner{background:#192d3e;border:1px solid #385f67;border-radius:13px;padding:13px 16px;color:#96eddc;font-size:12px;font-weight:700;margin-bottom:17px}.mini-map{margin-top:20px;display:flex;gap:7px;flex-wrap:wrap}.mini-map button{border:1px solid #344764;border-radius:9px;background:#223149;color:#aec3dd;padding:8px 11px;font:800 11px 'JetBrains Mono',monospace}.mini-map button.active{border-color:var(--cyan);color:var(--cyan)}.mini-map button.done{color:var(--green)}.mini-map button:disabled{opacity:.4}.floating-cloud{position:fixed;pointer-events:none;z-index:15;font-size:27px;animation:fly 1.1s ease forwards}@keyframes fly{0%{opacity:0;transform:translateY(15px) rotate(-15deg)}30%{opacity:1}100%{transform:translateY(-145px) rotate(25deg);opacity:0}}
+    @media(max-width:1200px){.levels-grid{grid-template-columns:repeat(2,1fr)}.mission-layout{grid-template-columns:minmax(260px,.9fr) minmax(320px,1.1fr)}.hero{padding:32px}.hero h1{font-size:41px}.hero-terminal pre{font-size:11px}}
+    @media(max-width:980px){.app{display:block}.sidebar{height:auto;position:relative;padding:15px 20px;border-right:0;border-bottom:1px solid var(--border);gap:13px}.sidebar .sidebar-label,.sidebar-foot{display:none}.sidebar-items{display:flex;gap:8px;overflow:auto;padding-bottom:1px}.side-link{white-space:nowrap;width:auto;flex-shrink:0;padding:9px 12px}.side-link .side-detail{display:none}.sidebar .logo{padding:0}.topbar{height:65px}.mission-layout{grid-template-columns:1fr}.mission-left{grid-template-columns:1fr 1fr}.mission-left .info-card{min-width:0}.hero-terminal{transform:none}}
+    @media(max-width:650px){.view{padding-top:24px}.topbar{padding:0 18px}.breadcrumbs{font-size:11px}.stat-pill{padding:6px 9px;font-size:10px}.stat-pill.engine-status{display:none}.hero{grid-template-columns:1fr;padding:26px;min-height:auto}.hero h1{font-size:35px;letter-spacing:-1.6px}.hero-terminal{display:none}.quick-stats{grid-template-columns:1fr 1fr;gap:10px}.quick-stats .quick-box:last-child{grid-column:span 2}.quick-box{padding:13px}.levels-grid{grid-template-columns:1fr}.level-card{min-height:190px}.level-card .level-icon{margin-bottom:9px}.mission-left{grid-template-columns:1fr}.mission-heading{display:block}.mission-right-badges{justify-content:flex-start;margin-top:13px}.editor-footer{align-items:stretch}.editor-footer .hint-text{width:100%}.editor-buttons{width:100%}.editor-buttons button{flex:1}.modal-buttons{flex-direction:column}.code-input{font-size:12px}.logo{font-size:19px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" aria-label="Course navigation">
+    <div class="logo"><div class="logo-icon">&gt;_</div><span>PY<span>QUEST</span></span></div>
+    <nav><div class="sidebar-label">Your adventure</div><div class="sidebar-items" id="side-menu"></div></nav>
+    <div class="sidebar-foot"><div class="foot-head">⚡ Keep leveling up</div><p>Every challenge earns XP. Complete a level to unlock the next world.</p><div class="tiny-progress"><span id="sidebar-progress" style="width:0%"></span></div><div class="foot-small"><span id="sidebar-count">0 / 16 quests</span><span id="sidebar-percent">0%</span></div></div>
+  </aside>
+  <div class="main-area">
+    <header class="topbar"><div class="breadcrumbs" id="breadcrumbs">Academy / <strong>Dashboard</strong></div><div class="top-stats"><div class="stat-pill"><span class="spark">⚡</span><b id="xp-total">0</b> XP</div><div class="stat-pill">🏆 <span id="completed-total">0/16</span></div><div class="stat-pill engine-status" title="The real Python engine loads from the internet"><span id="engine-dot" class="engine-dot"></span><span id="engine-label">Python loading</span></div></div></header>
+    <main id="content" class="view"></main>
+  </div>
+</div>
+<div id="overlay"></div><div id="toast-container" role="status" aria-live="polite"></div>
+<script>
+'use strict';
+// Python Quest: one HTML file, containing all CSS, UI, course content, and game logic.
+// Only the real Python interpreter is downloaded at runtime (Pyodide); quizzes and saved progress work without it.
+const LEVELS = [
+  {name:'Beginner',symbol:'01',icon:'Aa',color:'cyan',short:'Start with the basics',description:'Print, variables, numbers and types.'},
+  {name:'Logic',symbol:'02',icon:'<>',color:'blue',short:'Teach your code to think',description:'Conditions, loops and functions.'},
+  {name:'Intermediate',symbol:'03',icon:'{}',color:'purple',short:'Work with real data',description:'Lists, dictionaries and strings.'},
+  {name:'Projects',symbol:'04',icon:'🚀',color:'gold',short:'Build something useful',description:'Create practical programs from scratch.'}
+];
+const LESSONS = [
+  {
+    id:'hello',level:0,type:'code',title:'Hello, Python!',label:'The first print',xp:100,concept:'Printing output',
+    learn:'Python uses print() to show something on the screen. Put text inside quotes, then place it between the parentheses. You just wrote an instruction for a computer!',
+    example:'print("Welcome to Python!")',goal:'Print exactly: Hello, Python!',starter:'# Your first line of Python\n# Make the computer say hello!\n',hint:'Type print("Hello, Python!") — remember the capital P and the exclamation mark.',solution:'print("Hello, Python!")',
+    tests:'assert __output__.strip() == "Hello, Python!", "Your output should say exactly: Hello, Python!"'
+  },
+  {
+    id:'variables',level:0,type:'code',title:'Meet the Variables',label:'Save information',xp:100,concept:'Variables and strings',
+    learn:'Variables are labeled boxes that hold data. Use = to assign a value. Text goes in quotes; whole numbers do not. You can use variables inside print() to display their values.',
+    example:'hero = "Nova"\nlevel = 3\nprint(hero, level)',goal:'Create name = "Coder" and age = 14. Print them together, separated by a space.',starter:'# Create two variables\nname = \nage = \n\n# Print both on one line\n',hint:'Use name = "Coder" and age = 14. You can print both using print(name, age).',solution:'name = "Coder"\nage = 14\nprint(name, age)',
+    tests:'assert name == "Coder", "Set name to the string Coder."\nassert age == 14 and isinstance(age, int), "Set age to the whole number 14, without quotes."\nassert __output__.strip() == "Coder 14", "Print the name and age on one line with a space between them."'
+  },
+  {
+    id:'math',level:0,type:'code',title:'The Coin Collector',label:'Math with Python',xp:110,concept:'Math operators',
+    learn:'Python can work like a calculator. Use + for addition, - for subtraction, * for multiplication, and / for division. Save the answer in a variable so you can reuse it.',
+    example:'coins = 12\nbonus = 8\ntotal = coins + bonus\nprint(total)',goal:'Set coins = 25 and bonus = 15, calculate total by adding them, and print 40.',starter:'coins = 25\nbonus = 15\n\n# Calculate the total using the variables\ntotal = \nprint(total)',hint:'Your missing line is total = coins + bonus.',solution:'coins = 25\nbonus = 15\ntotal = coins + bonus\nprint(total)',
+    tests:'assert coins == 25 and bonus == 15, "Keep coins at 25 and bonus at 15."\nassert total == coins + bonus, "Use the two variables to calculate total."\nassert __output__.strip() == "40", "Print the final total: 40."'
+  },
+  {
+    id:'typequiz',level:0,type:'quiz',title:'Data Type Duel',label:'Knowledge battle',xp:70,concept:'Strings versus integers',
+    learn:'A string is text, even when the text looks like a number. An integer is a whole number you can add or subtract normally.',
+    example:'score = 50       # integer\nplayer = "Nova"  # string\ncode = "50"       # string, not a number',goal:'Pick the value that Python treats as an integer.',question:'Which of these is an integer in Python?',options:['"100"','100','"one hundred"','"100.0"'],answer:1,
+    explanation:'100 without quotes is an integer. Anything inside quotes is a string, even if it looks like a number.'
+  },
+  {
+    id:'condition',level:1,type:'code',title:'The Age Gate',label:'Choose a path',xp:120,concept:'if / else statements',
+    learn:'An if statement checks a condition. If it is True, its indented block runs. Otherwise, the else block runs. Indentation (usually four spaces) matters in Python!',
+    example:'health = 5\nif health > 0:\n    print("Alive")\nelse:\n    print("Game over")',goal:'Use if / else to print Adult for an age of at least 18, otherwise Minor. Age is 17, so your output must be Minor.',
+    starter:'age = 17\n\n# Check whether age is at least 18\n',hint:'Use if age >= 18: and an else: branch. Indent each print by four spaces.',
+    solution:'age = 17\nif age >= 18:\n    print("Adult")\nelse:\n    print("Minor")',
+    tests:'assert age == 17, "Keep the age set to 17."\nassert "if " in __code__ and "else:" in __code__, "Use both if and else in your solution."\nassert __output__.strip() == "Minor", "At age 17, your program should print Minor."'
+  },
+  {
+    id:'loops',level:1,type:'code',title:'The Looping Tower',label:'Repeat with loops',xp:120,concept:'for loops and range()',
+    learn:'A for loop repeats code. range(1, 6) produces 1, 2, 3, 4, 5. The final number (6) is excluded. This saves you from writing five print statements.',
+    example:'for n in range(1, 4):\n    print(n)\n# Prints 1, 2, 3',goal:'Use a for loop to print the numbers 1 through 5, each on its own line.',
+    starter:'# Climb five floors!\nfor n in range(1, 6):\n    # Print each floor\n    ',hint:'Inside the indented loop, write print(n).',solution:'for n in range(1, 6):\n    print(n)',
+    tests:'assert "for " in __code__ and "range(" in __code__, "Use a for loop with range()."\nassert __output__.strip().splitlines() == ["1", "2", "3", "4", "5"], "Print 1 through 5, one number per line."'
+  },
+  {
+    id:'functions',level:1,type:'code',title:'Build a Power-Up',label:'Create a function',xp:130,concept:'Defining functions',
+    learn:'A function is a reusable block of code. def names the function, parentheses hold inputs (parameters), and return sends a result back. Functions help you avoid repeating the same code.',
+    example:'def add(a, b):\n    return a + b\n\nprint(add(2, 3))  # 5',goal:'Create a function double(number) that returns twice the number. Then print double(7).',
+    starter:'def double(number):\n    # Return twice the number\n    \n\nprint(double(7))',hint:'Inside the function, write return number * 2. Do not replace return with print.',
+    solution:'def double(number):\n    return number * 2\n\nprint(double(7))',
+    tests:'assert callable(double), "Define a function called double."\nassert double(7) == 14, "double(7) should return 14."\nassert double(-3) == -6, "double(-3) should return -6."\nassert double(0) == 0, "double(0) should return 0."\nassert __output__.strip() == "14", "Print the result of double(7)."'
+  },
+  {
+    id:'logicquiz',level:1,type:'quiz',title:'Logic Lab',label:'Knowledge battle',xp:70,concept:'Understanding range()',
+    learn:'The range() function can produce a sequence of numbers for a loop. With range(start, stop), start is included, but stop is not.',
+    example:'for i in range(2, 5):\n    print(i)',goal:'Predict exactly what the loop prints.',question:'What does this loop print?\nfor i in range(2, 5):\n    print(i)',options:['2, 3, 4','2, 3, 4, 5','1, 2, 3, 4','2, 5'],answer:0,
+    explanation:'range(2, 5) contains 2, 3 and 4. The stop value of 5 is not included.'
+  },
+  {
+    id:'lists',level:2,type:'code',title:'Inventory Manager',label:'Lists and append()',xp:140,concept:'Lists',
+    learn:'A list stores multiple values in order. Create one with square brackets: [10, 20, 30]. append() adds an item to the end, and sum() can add numeric items together.',
+    example:'items = [4, 6]\nitems.append(10)\nprint(sum(items))  # 20',goal:'Create scores = [10, 20, 30], append 40, and print the sum of the four scores.',
+    starter:'scores = [10, 20, 30]\n\n# Add 40 to the list\n\n# Print the sum of all scores\n',hint:'Use scores.append(40) and then print(sum(scores)).',
+    solution:'scores = [10, 20, 30]\nscores.append(40)\nprint(sum(scores))',
+    tests:'assert scores == [10, 20, 30, 40], "Your scores list should contain 10, 20, 30, 40."\nassert ".append(" in __code__, "Use append() to add the fourth score."\nassert __output__.strip() == "100", "Print the sum: 100."'
+  },
+  {
+    id:'dictionaries',level:2,type:'code',title:'Hero Database',label:'Dictionaries',xp:140,concept:'Key-value pairs',
+    learn:'Dictionaries store labeled values in key-value pairs. For example, hero["name"] looks up the value stored under the name key. Dictionaries are great for profiles, products and settings.',
+    example:'pet = {"name": "Rex", "age": 4}\nprint(pet["name"])  # Rex',goal:'Create a dictionary hero with name "Nova" and power 90. Print the name, then the power on separate lines.',
+    starter:'hero = {\n    "name": "Nova",\n    "power": 90\n}\n\n# Print the name and power from the dictionary\n',hint:'Use print(hero["name"]) and print(hero["power"]).',
+    solution:'hero = {"name": "Nova", "power": 90}\nprint(hero["name"])\nprint(hero["power"])',
+    tests:'assert isinstance(hero, dict) and hero.get("name") == "Nova" and hero.get("power") == 90, "Your hero dictionary needs name: Nova and power: 90."\nassert __output__.strip().splitlines() == ["Nova", "90"], "Print Nova and 90 on separate lines."'
+  },
+  {
+    id:'strings',level:2,type:'code',title:'Message Transformer',label:'Transform text',xp:140,concept:'String methods',
+    learn:'Strings have built-in methods for changing or examining text. .upper() makes letters uppercase; .lower() makes them lowercase; .strip() removes surrounding whitespace.',
+    example:'word = "hello"\nprint(word.upper())  # HELLO',goal:'Set message = "python power" and print an uppercase version of it using .upper().',
+    starter:'message = "python power"\n\n# Transform the text to uppercase and print it\n',hint:'Try print(message.upper()). The parentheses after upper are required.',
+    solution:'message = "python power"\nprint(message.upper())',
+    tests:'assert message == "python power", "Keep message set to python power."\nassert ".upper(" in __code__, "Use the .upper() method."\nassert __output__.strip() == "PYTHON POWER", "Print PYTHON POWER."'
+  },
+  {
+    id:'dataquiz',level:2,type:'quiz',title:'Data Detective',label:'Knowledge battle',xp:70,concept:'Choosing data structures',
+    learn:'Lists are best for collections in a particular order. Dictionaries are best when each piece of information has a label, such as a product name, price, and stock count.',
+    example:'product = {"name": "Batter", "price": 80}',goal:'Choose the data structure best suited to labeled product information.',
+    question:'What should you use to store a product with keys for name, price and stock?',options:['A for loop','A dictionary','A print statement','A single integer'],answer:1,
+    explanation:'A dictionary connects each field (name, price, stock) to its own value.'
+  },
+  {
+    id:'budget',level:3,type:'code',title:'Budget Calculator',label:'Project 01',xp:180,concept:'Functions + lists + sum()',
+    learn:'Time for real-world programs! Your first project is a tiny budget calculator. It takes income and a list of expenses, then returns what is left. Test functions with different data, not just one example.',
+    example:'def total_cost(prices):\n    return sum(prices)\n\nprint(total_cost([20, 30]))',goal:'Build balance(income, expenses) that returns income minus the sum of expenses. Print balance(1000, [200, 150, 50]).',
+    starter:'def balance(income, expenses):\n    # Return the money remaining\n    \n\nprint(balance(1000, [200, 150, 50]))',hint:'The function should return income - sum(expenses). Your printed answer should be 600.',
+    solution:'def balance(income, expenses):\n    return income - sum(expenses)\n\nprint(balance(1000, [200, 150, 50]))',
+    tests:'assert balance(1000, [200, 150, 50]) == 600, "The example should leave 600."\nassert balance(500, []) == 500, "Handle an empty expense list."\nassert balance(100, [120]) == -20, "A budget can be negative."\nassert __output__.strip() == "600", "Print the example result: 600."'
+  },
+  {
+    id:'checkout',level:3,type:'code',title:'Store Checkout',label:'Project 02',xp:190,concept:'Function arguments + percentages',
+    learn:'Businesses constantly calculate prices, quantities and discounts. An automated checkout function lets you use one formula for every order. Percentage discounts divide by 100.',
+    example:'price = 100\ndiscount = 10\nfinal = price * (1 - discount / 100)\nprint(final)  # 90.0',goal:'Create checkout(price, qty, discount) returning the total AFTER percentage discount. Print checkout(100, 3, 10).',
+    starter:'def checkout(price, qty, discount):\n    # Calculate the discounted order total\n    \n\nprint(checkout(100, 3, 10))',hint:'Try return price * qty * (1 - discount / 100). The test expects a number, not text.',
+    solution:'def checkout(price, qty, discount):\n    return price * qty * (1 - discount / 100)\n\nprint(checkout(100, 3, 10))',
+    tests:'assert abs(checkout(100, 3, 10) - 270) < 0.001, "100 × 3 with 10% off must equal 270."\nassert abs(checkout(80, 2, 0) - 160) < 0.001, "Zero discount should leave the full amount."\nassert abs(checkout(200, 1, 25) - 150) < 0.001, "A 25% discount should reduce 200 to 150."\nassert __output__.strip() in ("270", "270.0"), "Print the example result: 270."'
+  },
+  {
+    id:'guess',level:3,type:'code',title:'Guess the Number',label:'Project 03',xp:200,concept:'Return values + conditions',
+    learn:'Games react to player choices! Build the comparison logic behind a number-guessing game. The function checks whether a guess is too high, too low, or correct. Because it is a function, you can test lots of guesses.',
+    example:'def is_winner(score):\n    if score >= 10:\n        return "Win"\n    return "Keep trying"',goal:'Write check_guess(guess, secret). Return "Too low" if guess is smaller, "Too high" if larger, or "Correct!" if equal. Print check_guess(7, 7).',
+    starter:'def check_guess(guess, secret):\n    # Compare guess and secret with if / elif / else\n    \n\nprint(check_guess(7, 7))',hint:'Use if guess < secret: return "Too low"; elif guess > secret: return "Too high"; else: return "Correct!".',
+    solution:'def check_guess(guess, secret):\n    if guess < secret:\n        return "Too low"\n    elif guess > secret:\n        return "Too high"\n    else:\n        return "Correct!"\n\nprint(check_guess(7, 7))',
+    tests:'assert check_guess(4, 7) == "Too low", "4 compared with 7 should return Too low."\nassert check_guess(9, 7) == "Too high", "9 compared with 7 should return Too high."\nassert check_guess(7, 7) == "Correct!", "Matching numbers should return Correct!"\nassert __output__.strip() == "Correct!", "Print the result of check_guess(7, 7)."'
+  },
+  {
+    id:'final',level:3,type:'code',title:'The Final Boss: Cart Engine',label:'Final project',xp:300,concept:'Combine everything',
+    learn:'Your final project combines lists, loops or sum(), functions, arithmetic and reusable logic. Build a cart total calculator that accepts many item prices and an optional percentage discount. Use round(number, 2) to keep money at two decimal places.',
+    example:'def rounded_cost(prices):\n    return round(sum(prices), 2)',goal:'Build cart_total(items, discount=0). Return the sum of item prices after discount, rounded to 2 decimal places. Print cart_total([99.99, 50, 25], 10).',
+    starter:'def cart_total(items, discount=0):\n    # Add up the list, apply the discount, and round\n    \n\nprint(cart_total([99.99, 50, 25], 10))',
+    hint:'Calculate sum(items) * (1 - discount / 100), then return round(that_value, 2). Remember the default discount=0.',
+    solution:'def cart_total(items, discount=0):\n    total = sum(items)\n    discounted = total * (1 - discount / 100)\n    return round(discounted, 2)\n\nprint(cart_total([99.99, 50, 25], 10))',
+    tests:'assert cart_total([100, 200], 10) == 270, "A 10% discount on 300 should return 270."\nassert cart_total([40, 60]) == 100, "Default discount should be 0."\nassert cart_total([]) == 0, "Handle an empty cart."\nassert cart_total([19.99, 0.99], 5) == 19.93, "Round to two decimal places."\nassert __output__.strip() in ("157.49",), "Print 157.49 for the sample cart."'
+  }
+];
+const STORE_KEY = 'python_quest_save_v1';
+let saved;
+try { saved = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch (_) { saved = {}; }
+const state = {
+  completed: new Set(Array.isArray(saved.completed) ? saved.completed.filter(id => LESSONS.some(l => l.id === id)) : []),
+  assisted: saved.assisted && typeof saved.assisted === 'object' ? saved.assisted : {},
+  drafts: saved.drafts && typeof saved.drafts === 'object' ? saved.drafts : {},
+  view: 'home', active: null, selectedOption: null, feedback: null, output: '', hintOpen: false,
+  solutionOpen: false, running: false, checked: false
+};
+const $ = id => document.getElementById(id);
+const escapeHTML = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const lessonsFor = level => LESSONS.filter(l => l.level === level);
+const unlocked = index => index === 0 || state.completed.has(LESSONS[index-1].id);
+const nextIndex = () => { const i = LESSONS.findIndex(l => !state.completed.has(l.id)); return i < 0 ? LESSONS.length - 1 : i; };
+const xpEarned = () => LESSONS.reduce((total,l) => total + (state.completed.has(l.id) ? Math.round(l.xp*(state.assisted[l.id] ? 0.4 : 1)) : 0), 0);
+const progress = () => Math.round((state.completed.size / LESSONS.length) * 100);
+const persist = () => { try { localStorage.setItem(STORE_KEY, JSON.stringify({completed:[...state.completed], assisted:state.assisted, drafts:state.drafts})); } catch (_) {} };
+let toastTimer;
+function toast(message) { $('toast-container').innerHTML = `<div class="toast">${escapeHTML(message)}</div>`; clearTimeout(toastTimer); toastTimer=setTimeout(()=> $('toast-container').innerHTML='',3400); }
+function renderShell() {
+  $('xp-total').textContent = xpEarned();
+  $('completed-total').textContent = `${state.completed.size}/${LESSONS.length}`;
+  $('sidebar-progress').style.width = progress()+'%';
+  $('sidebar-percent').textContent = progress()+'%';
+  $('sidebar-count').textContent = `${state.completed.size} / ${LESSONS.length} quests`;
+  $('breadcrumbs').innerHTML = state.view==='home' ? 'Academy / <strong>Dashboard</strong>' : `Academy / ${LEVELS[LESSONS[state.active].level].name} / <strong>Mission ${state.active+1}</strong>`;
+  $('side-menu').innerHTML = `<button class="side-link ${state.view==='home' ? 'active' : ''}" data-home><span class="side-ico">⌂</span> Dashboard</button>` + LEVELS.map((level,i) => {
+    const first=LESSONS.findIndex(l=>l.level===i), count=lessonsFor(i).filter(l=>state.completed.has(l.id)).length, lock=!unlocked(first);
+    return `<button class="side-link ${state.view==='mission'&&LESSONS[state.active].level===i?'active':''} ${lock?'locked':''}" data-level="${i}" ${lock?'aria-label="'+level.name+' locked"':''}><span class="side-ico">${level.icon}</span><span>${level.name}</span><span class="side-detail">${lock?'🔒':count+'/4'}</span></button>`;
+  }).join('');
+}
+function openHome(){ state.view='home';state.active=null;state.feedback=null;state.checked=false;render();window.scrollTo(0,0); }
+function openLesson(index){ if(!unlocked(index)){toast('🔒 Complete the previous mission first!');return;} if(index<0||index>=LESSONS.length)return;state.view='mission';state.active=index;state.feedback=null;state.output='';state.checked=false;state.selectedOption=null;state.hintOpen=false;state.solutionOpen=false;render();window.scrollTo(0,0); }
+function openLevel(level){ const first=LESSONS.findIndex(l=>l.level===level);const target=LESSONS.findIndex((l,i)=>l.level===level&&!state.completed.has(l.id)&&unlocked(i));if(!unlocked(first)){toast('🔒 Finish the previous level to unlock this world.');return;}openLesson(target<0 ? first : target); }
+function render(){renderShell();$('content').innerHTML=state.view==='home' ? homeHTML() : missionHTML();if(state.view==='mission'&&LESSONS[state.active].type==='code') { updateLines();showOutput(); } }
+function homeHTML(){ const next=LESSONS[nextIndex()],allDone=state.completed.size===LESSONS.length;
+ return `<section class="hero"><div><div class="eyebrow">✦ &nbsp;THE CODE ADVENTURE</div><h1>${allDone?'You are a <span class="gradient-text">Python champion.</span>':'Learn Python.<br><span class="gradient-text">Play. Build. Level up.</span>'}</h1><p>${allDone?'You completed all 16 quests. Replay missions, experiment with code, and keep building projects.':'Forget boring tutorials. Complete interactive coding missions, defeat quizzes, unlock 4 worlds, and build real Python projects along the way.'}</p><button class="primary" data-mission="${nextIndex()}">${allDone?'↻ Replay the final quest':'▶ '+(state.completed.size?'Continue your quest':'Start playing')+' &nbsp;→'}</button></div><div class="hero-terminal" aria-hidden="true"><div class="window-top"><i class="traffic"></i><i class="traffic"></i><i class="traffic"></i><span class="window-title">quest.py — your future</span></div><pre><span class="code-gray"># Ready, player one?</span>\n<span class="code-blue">player</span> = <span class="code-green">"You"</span>\n<span class="code-blue">skills</span> = [<span class="code-green">"curiosity"</span>]\n\n<span class="code-purple">for</span> mission <span class="code-purple">in</span> quest:\n    skills.append(mission)\n    <span class="code-purple">print</span>(<span class="code-green">"LEVEL UP!"</span>)\n\n<span class="code-gray"># Let's write your story ⚡</span></pre></div></section>
+ <div class="quick-stats"><div class="quick-box"><span class="quick-icon">⚡</span><div><b>${xpEarned()}</b><span>Total XP earned</span></div></div><div class="quick-box"><span class="quick-icon">🎯</span><div><b>${state.completed.size}<span style="font-size:14px;color:#8296b4"> / 16</span></b><span>Missions completed</span></div></div><div class="quick-box"><span class="quick-icon">🌍</span><div><b>${LEVELS.filter((_,i)=>unlocked(LESSONS.findIndex(l=>l.level===i))).length}<span style="font-size:14px;color:#8296b4"> / 4</span></b><span>Worlds unlocked</span></div></div></div>
+ <div class="section-row"><div><h2>Choose your world</h2><p>One mission at a time. Every completed challenge gets you closer to mastery.</p></div><div class="section-mini">${progress()}% COMPLETE</div></div>
+ <section class="levels-grid" aria-label="Learning levels">${LEVELS.map((lvl,i)=>{const total=lessonsFor(i).filter(l=>state.completed.has(l.id)).length;const lock=!unlocked(LESSONS.findIndex(l=>l.level===i));return `<button class="level-card ${lock?'locked':''}" data-level="${i}"><span class="level-icon tone-${lvl.color}">${lvl.icon}</span><div class="level-no">WORLD ${lvl.symbol}</div><h3>${lvl.name} ${lock?'🔒':''}</h3><p>${lvl.description}</p><div class="card-progress"><span>${total}/4 missions</span><span>${Math.round(total/4*100)}%</span></div><div class="tiny-progress"><span style="width:${total*25}%"></span></div><div class="card-bottom"><span>${lock?'LOCKED · COMPLETE PRIOR WORLD':total===4?'COMPLETED ✓':'ENTER WORLD →'}</span><span>✦</span></div></button>`;}).join('')}</section>
+ <div class="course-note"><strong>🐍 Real Python, not fake code.</strong> Coding missions execute using the Python interpreter (Pyodide) in your browser and check your results. The interpreter downloads once you open the page with internet access. Quizzes and saved progress work without it. Progress stays on this device/browser.</div>`;
+}
+function missionHTML(){ const lesson=LESSONS[state.active], level=LEVELS[lesson.level], done=state.completed.has(lesson.id), isCode=lesson.type==='code', sectionLessons=lessonsFor(lesson.level);
+ return `<button class="back-button" data-home>← &nbsp; Back to world map</button><div class="mission-heading"><div><div class="mission-tag">WORLD ${level.symbol} / ${level.name.toUpperCase()} · QUEST ${String(state.active+1).padStart(2,'0')} OF ${LESSONS.length}</div><h1>${escapeHTML(lesson.title)}</h1><p>${escapeHTML(lesson.label)} · ${isCode?'Write and run actual Python':'Choose the right answer'}</p></div><div class="mission-right-badges"><span class="reward-badge">⚡ +${Math.round(lesson.xp*(state.assisted[lesson.id] ? .4 : 1))} XP</span>${done?'<span class="status-badge">✓ Completed</span>':'<span class="status-badge">● In progress</span>'}</div></div>
+ ${done?'<div class="progress-banner">✓ You cleared this mission! You can keep practicing or move ahead.</div>':''}
+ <div class="mission-layout"><div class="mission-left"><article class="info-card"><div class="card-kicker">📖 &nbsp; The lesson</div><h2>${escapeHTML(lesson.concept)}</h2><p>${escapeHTML(lesson.learn)}</p><pre class="snippet">${escapeHTML(lesson.example)}</pre></article><article class="info-card"><div class="card-kicker">🎯 &nbsp; Your mission</div><h2>Mission objective</h2><p>${escapeHTML(lesson.goal)}</p><div class="objective"><b>Victory condition</b>${isCode?'Write your answer, run it to see the output, then select Check answer.':'Answer the quiz correctly to unlock your next quest.'}</div><div class="help-actions"><button data-hint>💡 ${state.hintOpen?'Hide hint':'Get a hint'}</button>${isCode?'<button data-solution>👁 '+(state.solutionOpen?'Hide solution':'View solution')+'</button>':''}</div>${state.hintOpen?`<div class="help-box">💡 ${escapeHTML(lesson.hint||'Use the example and read each option carefully. Think about what each Python command does.')}</div>`:''}${state.solutionOpen&&isCode?`<div class="help-box"><b>Example solution</b><pre class="snippet">${escapeHTML(lesson.solution)}</pre><button class="mini-button" data-load-solution>Insert this solution in editor</button><p class="smallprint">Using the solution reduces this mission's XP reward to 40%.</p></div>`:''}<div class="quest-track">${sectionLessons.map(l=>`<span class="track-step ${state.completed.has(l.id)?'done':l.id===lesson.id?'active':''}"></span>`).join('')}</div><div class="smallprint">${sectionLessons.filter(l=>state.completed.has(l.id)).length}/4 completed in ${level.name}</div></article></div>
+ <div class="workspace">${isCode?codeHTML(lesson):quizHTML(lesson)}${state.feedback?feedbackHTML(state.feedback):''}${done?nextButtonHTML():''}</div></div>
+ <div class="mini-map">${sectionLessons.map((l,i)=>{const index=LESSONS.indexOf(l),lock=!unlocked(index);return `<button ${lock?'disabled':''} class="${index===state.active?'active':''} ${state.completed.has(l.id)?'done':''}" data-mission="${index}" title="${escapeHTML(l.title)}">${state.completed.has(l.id)?'✓':lock?'🔒':i+1} ${escapeHTML(l.label)}</button>`}).join('')}</div>`;
+}
+function codeHTML(lesson){const current=Object.prototype.hasOwnProperty.call(state.drafts,lesson.id)?state.drafts[lesson.id]:lesson.starter;
+ return `<section class="editor-card" aria-label="Python code editor"><div class="editor-top"><div class="editor-label"><span class="py-icon">Py</span> mission.py</div><div class="editor-tools"><button class="mini-button" data-reset-code title="Reset to starter code">↻ Reset</button><button class="mini-button" data-copy-code title="Copy your code">⧉ Copy</button></div></div><div class="editor-body"><div class="line-numbers" id="line-numbers" aria-hidden="true">1</div><textarea id="code-editor" class="code-input" aria-label="Write Python code here" spellcheck="false" autocomplete="off" autocapitalize="off" wrap="off">${escapeHTML(current)}</textarea></div><div class="editor-footer"><span class="hint-text">⌨ Ctrl / ⌘ + Enter to run</span><div class="editor-buttons"><button id="run-btn" class="secondary" data-run ${state.running?'disabled':''}>▶ Run code</button><button id="check-btn" class="primary" data-check ${state.running?'disabled':''}>✓ Check answer</button></div></div></section><section class="console-card"><div class="console-head"><span>▣ &nbsp; OUTPUT CONSOLE</span><span id="console-state">Ready</span></div><div id="console-output" class="console-content">&gt; Click Run code to see what happens.</div></section>`;
+}
+function quizHTML(lesson){return `<section class="quiz-card"><div class="card-kicker">⚔️ &nbsp; Knowledge battle</div><h2>${escapeHTML(lesson.question).replace(/\n/g,'<br>')}</h2>${lesson.options.map((o,i)=>`<button class="option ${state.selectedOption===i?'selected':''} ${state.checked && i===lesson.answer?'correct':''} ${state.checked&&state.selectedOption===i&&i!==lesson.answer?'wrong':''}" data-option="${i}" ${state.checked&&state.completed.has(lesson.id)?'disabled':''}><span class="option-letter">${'ABCD'[i]}</span><span>${escapeHTML(o)}</span></button>`).join('')}<div class="quiz-footer"><span class="quiz-note">Pick one answer. No pressure!</span><button class="primary" data-submit-quiz ${state.selectedOption===null?'disabled':''}>✓ Submit answer</button></div></section>`;}
+function feedbackHTML(data){return `<div class="feedback ${data.kind}"><span>${data.kind==='ok'?'✓':data.kind==='no'?'✕':'ⓘ'}</span><span>${escapeHTML(data.message)}</span></div>`;}
+function nextButtonHTML(){let next=state.active+1;return next<LESSONS.length?`<button class="primary next-inline" data-mission="${next}">Next mission → ${escapeHTML(LESSONS[next].title)}</button>`:`<button class="primary next-inline" data-home>🏆 Return to the world map</button>`;}
+function updateLines(){const editor=$('code-editor'),line=$('line-numbers');if(!editor||!line)return;line.textContent=Array.from({length:Math.max(1,editor.value.split('\n').length)},(_,i)=>i+1).join('\n');line.scrollTop=editor.scrollTop;}
+function showOutput(){ const el=$('console-output');if(!el)return;el.className='console-content'+(state.feedback&&state.feedback.kind==='no'?' error':state.feedback&&state.feedback.kind==='ok'?' success':'');el.textContent=state.output||'> Click Run code to see what happens.';const tag=$('console-state');if(tag)tag.textContent=state.running?'Running...':state.feedback&&state.feedback.kind==='ok'?'Tests passed':state.feedback&&state.feedback.kind==='no'?'Needs fixing':'Ready'; }
+function updateFeedback(data){state.feedback=data;const existing=document.querySelector('.workspace .feedback');if(existing)existing.remove();const workspace=document.querySelector('.workspace');if(workspace&&data){const item=document.createElement('div');item.className=`feedback ${data.kind}`;item.innerHTML=`<span>${data.kind==='ok'?'✓':data.kind==='no'?'✕':'ⓘ'}</span><span>${escapeHTML(data.message)}</span>`;workspace.appendChild(item);}showOutput();}
+function completeLesson(lesson){if(state.completed.has(lesson.id)){updateFeedback({kind:'ok',message:'Perfect! You have already completed this mission. Feel free to experiment.'});return;}state.completed.add(lesson.id);const reward=Math.round(lesson.xp*(state.assisted[lesson.id] ? .4:1));persist();render();victory(lesson,reward);}
+function victory(lesson,reward){const finished=state.completed.size===LESSONS.length;const next=state.active+1;$('overlay').innerHTML=`<div class="modal-shade" role="dialog" aria-modal="true" aria-labelledby="win-title"><div class="modal"><div class="modal-icon">${finished?'🏆':'🎉'}</div><div class="eyebrow">${finished?'ACADEMY COMPLETED':'MISSION COMPLETE'}</div><h2 id="win-title">${finished?'Python champion!':'Quest cleared!'}</h2><p>${finished?'You finished all 16 missions across all 4 worlds. Your journey into real programming is just beginning.':'You beat '+escapeHTML(lesson.title)+'! Your Python skills just got stronger.'}</p><div class="big-xp">⚡ +${reward} XP</div><div class="modal-buttons"><button class="secondary" data-close-modal>Stay here</button><button class="primary" ${next<LESSONS.length?'data-next-modal="'+next+'"':'data-home'}>${finished?'🏠 World map':'Next quest →'}</button></div></div></div>`;sprinkle();}
+function sprinkle(){if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;for(let i=0;i<16;i++){const el=document.createElement('div');el.className='floating-cloud';el.textContent=['✦','✨','⚡','✧'][i%4];el.style.left=Math.random()*95+'vw';el.style.top=(60+Math.random()*40)+'vh';el.style.animationDelay=(Math.random()*.3)+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),1500);}}
+function checkQuiz(){const lesson=LESSONS[state.active];if(state.selectedOption===null)return;state.checked=true;if(state.selectedOption===lesson.answer){completeLesson(lesson);}else{state.feedback={kind:'no',message:'Not quite! '+lesson.explanation};render();}}
+// One single Web Worker hosts an actual Python interpreter. Terminating the worker breaks infinite loops safely.
+function pythonWorkerMain(){
+  let pyodide=null;
+  self.onmessage=async function(event){
+    const message=event.data;
+    if(message.type==='init'){
+      try {importScripts('https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js');pyodide=await loadPyodide();self.postMessage({type:'ready'});}
+      catch(error){self.postMessage({type:'init_error',error:String(error)});}
+      return;
+    }
+    if(message.type!=='run')return;
+    if(!pyodide){self.postMessage({type:'result',id:message.id,error:'Python is not loaded yet.'});return;}
+    const harness=String.raw`
+import io, contextlib, traceback, json
+namespace = {'__name__': '__main__'}
+stream = io.StringIO()
+error_message = None
+try:
+    with contextlib.redirect_stdout(stream), contextlib.redirect_stderr(stream):
+        exec(compile(user_code, '<your code>', 'exec'), namespace)
+except BaseException:
+    error_message = traceback.format_exc(limit=4)
+if error_message is None and test_code:
+    namespace['__output__'] = stream.getvalue()
+    namespace['__code__'] = user_code
+    try:
+        exec(compile(test_code, '<mission checks>', 'exec'), namespace)
+    except AssertionError as e:
+        error_message = 'Mission check failed: ' + (str(e) or 'One of the checks failed.')
+    except BaseException:
+        error_message = traceback.format_exc(limit=3)
+json.dumps({'output': stream.getvalue()[:6000], 'error': error_message, 'success': error_message is None})
+`;
+    try {pyodide.globals.set('user_code',message.code);pyodide.globals.set('test_code',message.tests||'');const result=JSON.parse(await pyodide.runPythonAsync(harness));self.postMessage({type:'result',id:message.id,...result});}
+    catch(error){self.postMessage({type:'result',id:message.id,output:'',success:false,error:String(error)});}
+  };
+}
+let pythonWorker=null,pythonReady=false,pythonFailed=false,requestId=0,pending=null,workerUrl=null;
+function setEngine(label,status){const dot=$('engine-dot');dot.className='engine-dot '+(status||'');$('engine-label').textContent=label;}
+function startPython(){
+  pythonReady=false;pythonFailed=false;setEngine('Python loading','');
+  if(pythonWorker)pythonWorker.terminate();if(workerUrl)URL.revokeObjectURL(workerUrl);
+  try{
+    workerUrl=URL.createObjectURL(new Blob(['('+pythonWorkerMain.toString()+')()'],{type:'application/javascript'}));
+    pythonWorker=new Worker(workerUrl);
+    pythonWorker.onmessage=event=>{
+      const data=event.data;
+      if(data.type==='ready'){pythonReady=true;setEngine('Python ready','ready');return;}
+      if(data.type==='init_error'){pythonFailed=true;setEngine('Offline / blocked','error');return;}
+      if(data.type==='result'&&pending&&pending.id===data.id){const task=pending;pending=null;clearTimeout(task.timer);handleCodeResult(data,task.lessonId,task.check);}
+    };
+    pythonWorker.onerror=()=>{pythonFailed=true;setEngine('Engine unavailable','error');if(pending){clearTimeout(pending.timer);pending=null;state.running=false;updateRunButtons(false);toast('Python could not start. Check your internet connection.');}};
+    pythonWorker.postMessage({type:'init'});
+  } catch(error){pythonFailed=true;setEngine('Engine unavailable','error');}
+}
+function updateRunButtons(disabled){state.running=disabled;for(const id of ['run-btn','check-btn']){const btn=$(id);if(btn)btn.disabled=disabled;}showOutput();}
+function runCode(check){
+  const editor=$('code-editor');if(!editor||state.running)return;
+  if(!pythonReady){toast(pythonFailed?'Python could not load. Connect to the internet and refresh.':'🐍 Python is still downloading. Try again in a moment.');return;}
+  const lesson=LESSONS[state.active];state.output='> Running Python...';state.feedback=null;updateFeedback(null);updateRunButtons(true);
+  const id=++requestId;
+  const timer=setTimeout(()=>{if(pending&&pending.id===id){pending=null;updateRunButtons(false);state.output='';updateFeedback({kind:'no',message:'Your program took too long (10 seconds). Check for infinite loops. Python is restarting.'});startPython();}},10000);
+  pending={id,timer,lessonId:lesson.id,check};pythonWorker.postMessage({type:'run',id,code:editor.value,tests:check?lesson.tests:''});
+}
+function handleCodeResult(result,lessonId,check){if(state.view!=='mission'||LESSONS[state.active].id!==lessonId)return;updateRunButtons(false);state.output=result.output||'(Program finished without printing anything.)';
+ if(result.error){updateFeedback({kind:'no',message:result.error.replace(/Traceback \(most recent call last\):[\s\S]*?(?=(?:SyntaxError|IndentationError|NameError|TypeError|ValueError|ZeroDivisionError|RecursionError|ModuleNotFoundError|IndexError|KeyError|AttributeError|RuntimeError|ImportError):)/,'').trim()||result.error});return;}
+ if(!check){updateFeedback({kind:'info',message:'Your code ran successfully! Click Check answer to see if it passes the mission tests.'});return;}
+ completeLesson(LESSONS[state.active]);
+}
+// Event delegation keeps all controls active even when content is re-rendered.
+document.addEventListener('click', async event=>{
+  const button=event.target.closest('button');if(!button)return;
+  if(button.hasAttribute('data-home')){$('overlay').innerHTML='';openHome();return;}
+  if(button.hasAttribute('data-close-modal')){$('overlay').innerHTML='';return;}
+  if(button.hasAttribute('data-next-modal')){const index=Number(button.dataset.nextModal);$('overlay').innerHTML='';openLesson(index);return;}
+  if(button.hasAttribute('data-level')){openLevel(Number(button.dataset.level));return;}
+  if(button.hasAttribute('data-mission')){openLesson(Number(button.dataset.mission));return;}
+  if(state.view!=='mission')return;
+  const lesson=LESSONS[state.active];
+  if(button.hasAttribute('data-hint')){state.hintOpen=!state.hintOpen;render();return;}
+  if(button.hasAttribute('data-solution')){state.solutionOpen=!state.solutionOpen;render();return;}
+  if(button.hasAttribute('data-load-solution')){state.assisted[lesson.id]=true;state.drafts[lesson.id]=lesson.solution;persist();render();toast('Solution loaded. You can edit it and see how it works!');return;}
+  if(button.hasAttribute('data-reset-code')){state.drafts[lesson.id]=lesson.starter;persist();const editor=$('code-editor');editor.value=lesson.starter;updateLines();editor.focus();toast('Editor reset to starter code.');return;}
+  if(button.hasAttribute('data-copy-code')){try{await navigator.clipboard.writeText($('code-editor').value);toast('✓ Code copied!');}catch(_){toast('Copy blocked by this browser. Select the editor text to copy.');}return;}
+  if(button.hasAttribute('data-run')){runCode(false);return;}
+  if(button.hasAttribute('data-check')){runCode(true);return;}
+  if(button.hasAttribute('data-option')){if(state.completed.has(lesson.id))return;state.selectedOption=Number(button.dataset.option);state.checked=false;state.feedback=null;render();return;}
+  if(button.hasAttribute('data-submit-quiz')){checkQuiz();return;}
+});
+document.addEventListener('input',event=>{if(event.target.id==='code-editor'&&state.active!==null){state.drafts[LESSONS[state.active].id]=event.target.value;persist();updateLines();}});
+document.addEventListener('scroll',event=>{if(event.target.id==='code-editor'&&$('line-numbers'))$('line-numbers').scrollTop=event.target.scrollTop;},true);
+document.addEventListener('keydown',event=>{
+ if(event.target.id==='code-editor'&&event.key==='Tab'){event.preventDefault();const el=event.target,start=el.selectionStart,end=el.selectionEnd;el.setRangeText('    ',start,end,'end');el.dispatchEvent(new Event('input',{bubbles:true}));}
+ if((event.ctrlKey||event.metaKey)&&event.key==='Enter'&&state.view==='mission'&&LESSONS[state.active].type==='code'){event.preventDefault();runCode(false);}
+});
+render();startPython();
+</script>
+</body>
+</html>
